@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+  >
+  <!-- View that adds new Customer -->
+
+  <h:head>
+    <!-- title of tab/window in browser -->
+    <title>#{uiconsts['addButtonLabel']}</title>
+  </h:head>
+  <h:body>
+    <h2>#{uiconsts['addButtonLabel']}</h2>
+    <br />
+    <p>This view should create a new Customer</p>
+    <h:form>
+     <h:panelGrid columns="2">
+        <h:outputText value="#{uiconsts['columnLabel_FirstName']}"/>
+        <p><h:inputText id="fname" value="#{newCustomer.firstName}"/></p>
+        
+        <h:outputText value="#{uiconsts['columnLabel_LastName']}"/>
+        <p><h:inputText id="lname" value="#{newCustomer.lastName}"/></p>
+        
+        <h:outputText value="#{uiconsts['columnLabel_Email']}"/>
+        <p><h:inputText id="email" value="#{newCustomer.email}"/></p>
+        
+        <h:outputText value="#{uiconsts['columnLabel_PhoneNumber']}"/>
+        <p><h:inputText id="phonenumber" value="#{newCustomer.phoneNumber}"/></p>      
+      </h:panelGrid>
+      <br/>
+      <h:commandButton value="#{uiconsts['submitButtonLabel']}" action="#{customerController.submitCustomer()}"/>
+      <h:commandButton value="#{uiconsts['cancelButtonLabel']}" immediate="true" action="index?faces-redirect=true"/>
+      </h:form>
+    
+    </h:body>
+</html>

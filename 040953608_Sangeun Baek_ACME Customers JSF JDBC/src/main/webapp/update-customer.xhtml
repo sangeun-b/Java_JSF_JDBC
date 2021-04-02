@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+  >
+  <!-- View that adds new Customer -->
+
+  <h:head>
+    <!-- title of tab/window in browser -->
+    <title>#{uiconsts['updateLabel']}</title>
+  </h:head>
+  <h:body>
+    <h2>#{uiconsts['updateLabel']}</h2>
+    <br />
+    <p>This view should update a Customer</p>
+    <h:form>
+     <h:panelGrid columns="2">
+        <h:outputText value="#{uiconsts['columnLabel_FirstName']}"/>
+        <h:inputText value="#{updateCustomer.firstName}"/>
+        
+        <h:outputText value="#{uiconsts['columnLabel_LastName']}"/>
+        <h:inputText value="#{updateCustomer.lastName}"/>
+        
+        <h:outputText value="#{uiconsts['columnLabel_Email']}"/>
+        <h:inputText value="#{updateCustomer.email}"/>
+        
+        <h:outputText value="#{uiconsts['columnLabel_PhoneNumber']}"/>
+        <h:inputText value="#{updateCustomer.phoneNumber}"/>    
+        <h:commandButton value="#{uiconsts['submitButtonLabel']}" action="#{customerController.submitUpdatedCustomer(updateCustomer)}"/>
+      <h:commandButton value="#{uiconsts['cancelButtonLabel']}" immediate="true" action="list-customers?faces-redirect=true"/>
+      </h:panelGrid>
+      <br/>
+      
+      </h:form>
+    
+    </h:body>
+</html>
